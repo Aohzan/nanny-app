@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<table>
+    <tr>
+        <th>{{ _('Name') }}</th>
+        <th>{{ _('Email') }}</th>
+        <th>{{ _('Children') }}</th>
+        <th></th>
+    </tr>
+    {% for parent in parents %}
+    <tr>
+        <td>{{ parent }}</td>
+        <td>{{ parent.email }}</td>
+        <td>{{ parent.children | length }}</td>
+        <td><a href="{{ url_for('.parent_detail', parent_id=parent.id) }}">{{ _('See') }}</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="{{ url_for('.parent_create') }}">{{ _('Create') }}</a>
+{% endblock %}

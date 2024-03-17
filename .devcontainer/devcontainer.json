@@ -1,0 +1,37 @@
+{
+  "name": "Devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "forwardPorts": [5000],
+  "postCreateCommand": "script/setup",
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "ms-python.debugpy",
+        "visualstudioexptteam.vscodeintellicode",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode"
+      ]
+    },
+    "settings": {
+      "python.pythonPath": "/usr/local/bin/python",
+      "python.testing.pytestArgs": ["--no-cov"],
+      "editor.formatOnPaste": false,
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "files.trimTrailingWhitespace": true,
+      "terminal.integrated.profiles.linux": {
+        "zsh": {
+          "path": "/usr/bin/zsh"
+        }
+      },
+      "terminal.integrated.defaultProfile.linux": "zsh",
+      "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+      }
+    }
+  }
+}

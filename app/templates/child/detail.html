@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>{{ _('General information') }}</h3>
+<b>{{ _('Name') }}</b> {{ child.family_name }} {{ child.first_name }}<br>
+<b>{{ _('Birth date') }}</b> {{ child.birthdate | humanize }}<br>
+<b>{{ _('Reside with both parents') }}</b> {{ child.reside_with_both_parents }}<br>
+<b>{{ _('Reside schedule') }}</b> {{ child.reside_schedule }}<br>
+
+<h3>{{ _('Family') }}</h3>
+<ul>
+    {% for assoc in child.parent_associations %}
+    <li><a href="{{ url_for('parent.parent_detail', parent_id=assoc.parent_id) }}">{{ assoc.parent }}</a> ({{ assoc.relation_type }}) <a href="{{ url_for('.child_assoc_delete', child_id=child.id, assoc_id=assoc.id) }}">{{ _('Remove association') }}</a></li>
+    {% endfor %}
+    <li><a href="{{ url_for('.child_assoc_add', child_id=child.id) }}">{{ _('Associate a new member') }}</a></li>
+</ul>
+
+<h3>{{ _('Family form') }}</h3>
+{% for field in child.child_family_field_associations %}
+<b>{{ field.child_family_field.name }}</b> {{ field.value }}<br>
+{% endfor %}
+<br>
+<a href="{{ url_for('.child_delete', child_id=child.id) }}">{{ _('Disable the child') }}</a></td>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+<div class="form-container">
+    <form method="post">
+        {{ form.csrf_token }}
+        {% for field in form if field.name != 'csrf_token' %}
+            {{ render_field(field) }}
+        {% endfor %}
+        <div class="row"><input type="submit" value="{{ _('Edit') }}" /></div>
+    </form>
+</div>
+{% endblock %}

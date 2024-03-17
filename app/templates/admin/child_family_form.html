@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+<div class="form-container">
+    <h3>{{ _("Existing fields") }}</h3>
+    {% for form in forms %}
+    <form method="POST" action="{{ url_for('.child_family_form_field_edit', field_id=form.field_id.data) }}">
+        {{ form.csrf_token }}
+        {{ render_field(form.field_type) }}
+        {{ render_field(form.field_name) }}
+        <div class="row">
+            <input type="submit" value="{{ _('Edit') }}" />
+            {% if form.field_disabled.data %}
+            <a class="button" href="{{ url_for('.child_family_form_field_enable', field_id=form.field_id.data) }}">{{ _('Enable') }}</a>
+            {% else %}
+            <a class="button" href="{{ url_for('.child_family_form_field_disable', field_id=form.field_id.data) }}">{{ _('Disable') }}</a>
+            {% endif %}
+        </div>
+    </form>
+    {% endfor %}
+    <h3>{{ _("Add a new field") }}</h3>
+    <form method="POST" action="{{ url_for('.child_family_form_field_create') }}">
+        {{ new_form.csrf_token }}
+        {{ render_field(new_form.field_type) }}
+        {{ render_field(new_form.field_name) }}
+        <div class="row"><input type="submit" value="{{ _('Add') }}" /></div>
+    </form>
+</div>
+{% endblock %}

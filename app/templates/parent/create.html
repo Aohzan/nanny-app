@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+<div class="form-container">
+  <form method=post>
+    {{ render_field(form.first_name) }}
+    {{ render_field(form.family_name) }}
+    {{ render_field(form.email) }}
+    <div class="row"><input type="submit" value="{{ _('Create') }}" /></div>
+  </form>
+</div>
+{% endblock %}

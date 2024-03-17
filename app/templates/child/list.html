@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<table>
+    <tr>
+        <th>{{ _('First name') }}</th>
+        <th>{{ _('Family name') }}</th>
+        <th>{{ _('Gender') }}</th>
+        <th></th>
+    </tr>
+    {% for child in children %}
+    <tr>
+        <td>{{ child.first_name }}</td>
+        <td>{{ child.family_name }}</td>
+        <td>{{ child.gender }}</td>
+        <td>
+            <a href="{{ url_for('.child_detail', child_id=child.id) }}">{{ _('Details') }}</a>
+            <a href="{{ url_for('.child_family_edit', child_id=child.id) }}">{{ _('Family form') }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="{{ url_for('.child_create') }}">{{ _('Add new') }}</a>
+{% endblock %}

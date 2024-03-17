@@ -1,0 +1,37 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.2
+    hooks:
+      - id: ruff
+        args:
+          - --fix
+      - id: ruff-format
+        files: ^((app|pylint|script|tests)/.+)?[^/]+\.py$
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        args:
+          - --ignore-words-list=additionals
+          - --skip="./.*,*.csv,*.json,*.ambr,*.po,*.mo"
+          - --quiet-level=2
+        exclude_types: [csv, json]
+        exclude: ^tests/fixtures/|homeassistant/generated/|tests/components/.*/snapshots/
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: "v1.9.0"
+    hooks:
+      - id: mypy
+  - repo: local
+    hooks:
+      - id: pytest-cov
+        name: pytest coverage
+        entry: pytest --cov --cov-report term-missing
+        language: python
+        require_serial: true
+        files: ^app/.+\.py$
+      - id: pylint
+        name: pylint
+        entry: pylint app --output-format=colorized --disable=R0903
+        language: python
+        require_serial: true
+        files: ^app/.+\.py$

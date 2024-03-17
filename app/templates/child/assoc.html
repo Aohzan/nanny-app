@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="{{ url_for('.child_assoc_add', child_id=child.id) }}" method="post">
+    <input type="hidden" id="child_id" name="child_id" value="{{ child.id }}">
+    {{ _('Associate') }} <b>{{ child }}</b> {{ _('to') }} 
+    <select id="parent_id" name="parent_id"><br>
+        <option>{{ _('Choose') }}</option>
+        {% for parent in select_parents %}
+        <option value="{{ parent.id }}">{{ parent }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    {{ _('Relation type') }} <input id="relation_type" name="relation_type"><br>
+    <br>
+    <input type="submit" value="{{ _('Associate') }}">
+</form>
+{% endblock %}

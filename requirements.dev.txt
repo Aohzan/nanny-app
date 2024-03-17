@@ -1,0 +1,7 @@
+ruff
+isort
+pre-commit
+codespell
+pytest
+pytest-flask
+pytest-cov

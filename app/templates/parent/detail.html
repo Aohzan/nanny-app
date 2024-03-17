@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<b>{{ _('Email') }}</b> {{ parent.email }}<br>
+<b>{{ _('Name') }}</b> {{ parent }}<br>
+<br>
+<b>{{ _('Children') }}</b>
+<ul>
+    {% for child in parent.children %}
+    <li><a href="{{ url_for('child.child_detail', child_id=child.id) }}">{{ child }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('.parent_delete', parent_id=parent.id) }}">{{ _('Delete') }}</a></td>
+{% endblock %}
+

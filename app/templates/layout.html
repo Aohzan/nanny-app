@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ config["APP_NAME"] }} - {{ title }}</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css') }}"  />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <a href="{{ url_for('timeline.timeline') }}" class="navbar-brand">{{ _('Home') }}</a>
+            <a href="{{ url_for('child.children_list') }}" class="navbar-item">{{ _('Children') }}</a>
+            <a href="{{ url_for('parent.parents_list') }}" class="navbar-item">{{ _('Parents') }}</a>
+            <a href="{{ url_for('base.contact') }}" class="navbar-item">{{ _('Contact') }}</a>
+            <a href="{{ url_for('timeline.timeline_create') }}" class="navbar-item">{{ _('Add message') }}</a>
+            <a href="{{ url_for('admin.child_family_form_list') }}" class="navbar-item">{{ _('Edit family form') }}</a>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <div class="body-content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer>
+            <p>
+                &copy; 2024
+                {{ config["APP_NAME"] }}                    
+                <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                    <option value="">{{ _('Language') }}</option>
+                    <option value="{{ url_for('base.set_language', language='fr') }}">{{ _('French') }}</option>
+                    <option value="{{ url_for('base.set_language', language='en') }}">{{ _('English') }}</option>
+                </select>
+            </p>
+        </footer>
+    </body>
+</html>

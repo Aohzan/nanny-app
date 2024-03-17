@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="timeline">
+    <h1>{{ _('Feed activity') }}</h1>
+
+    {% for message in timeline_messages %}
+    <div class="timeline-message">
+        <div class="info">
+            <div class="type">
+                <div class="icon"><i class="fa-solid fa-{{ message.message_type.icon | default('comment') }}"></i></div>
+                <p class="text">{{ _(message.message_type.name) }}</p>
+            </div>
+            <div class="date" title="{{ message.added_date }}">
+                {{ message.added_date_readable }}
+            </div>
+        </div>
+        {% if message.image %}
+        <img src="{{ message.image }}" class="image" alt="">
+        {% endif %}
+        <div class="content">
+            {% if message.message %}
+            <p class="text">{{ message.message }}</p>
+            {% endif %}
+            {% if message.duration %}
+            <p class="text">{{ message.duration_readable }}</p>
+            {% endif %}
+            {% if message.quantity %}
+            <p class="text">{{ message.quantity }} cl</p>
+            {% endif %}
+            {% if message.children %}
+            <p class="children">{{ _('Children') }}: {{ message.children_names }}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

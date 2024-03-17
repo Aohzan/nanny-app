@@ -1,0 +1,340 @@
+# French translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-03-17 19:52+0000\n"
+"PO-Revision-Date: 2024-03-10 14:22+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: app/forms/base.py:13 app/templates/child/list.html:5
+msgid "First name"
+msgstr "Prénom"
+
+#: app/forms/base.py:17 app/templates/child/list.html:6
+msgid "Family name"
+msgstr "Nom"
+
+#: app/forms/child.py:23 app/templates/child/list.html:7
+msgid "Gender"
+msgstr "Genre"
+
+#: app/forms/child.py:26 app/models/child.py:62
+msgid "Not defined"
+msgstr "Non défini"
+
+#: app/forms/child.py:27 app/models/child.py:59
+msgid "Boy"
+msgstr "Garçon"
+
+#: app/forms/child.py:28 app/models/child.py:61
+msgid "Girl"
+msgstr "Fille"
+
+#: app/forms/child.py:37
+msgid "Gender must match iso: Not defined, boy or girl"
+msgstr "Le genre doit être: Non défini, garçon ou fille"
+
+#: app/forms/child.py:41 app/templates/child/detail.html:5
+#, fuzzy
+msgid "Birth date"
+msgstr "Prénom"
+
+#: app/forms/child.py:44 app/templates/child/detail.html:6
+msgid "Reside with both parents"
+msgstr "Vit avec ses deux parents"
+
+#: app/forms/child.py:48 app/templates/child/detail.html:7
+msgid "Reside schedule"
+msgstr "Planning de garde"
+
+#: app/forms/child.py:63 app/templates/child/detail.html:4
+#: app/templates/parent/detail.html:4 app/templates/parent/list.html:5
+msgid "Name"
+msgstr "Nom"
+
+#: app/forms/child.py:67
+#, fuzzy
+msgid "Field type"
+msgstr "Type de relation"
+
+#: app/forms/child.py:69
+msgid "Small text"
+msgstr "Texte court"
+
+#: app/forms/child.py:70
+msgid "Large text"
+msgstr "Texte long"
+
+#: app/forms/child.py:71
+msgid "Yes or no"
+msgstr "Oui ou non"
+
+#: app/forms/timeline.py:23
+#, fuzzy
+msgid "Message type"
+msgstr "Type de message"
+
+#: app/forms/timeline.py:31 app/templates/layout.html:14
+#: app/templates/timeline/list.html:32 app/templates/parent/detail.html:6
+#: app/templates/parent/list.html:7 app/views/child.py:28
+msgid "Children"
+msgstr "Enfants"
+
+#: app/forms/timeline.py:34
+#, fuzzy
+msgid "Message"
+msgstr "Message"
+
+#: app/forms/timeline.py:38
+msgid "Duration (minutes)"
+msgstr "Durée (minutes)"
+
+#: app/forms/timeline.py:42
+msgid "Quantity (cl)"
+msgstr "Quantité (cl)"
+
+#: app/forms/timeline.py:46
+msgid "Event date"
+msgstr "Date de l'évènement"
+
+#: app/forms/parent.py:13 app/templates/parent/detail.html:3
+#: app/templates/parent/list.html:6
+msgid "Email"
+msgstr "Email"
+
+#: app/templates/contact.html:3
+#, fuzzy
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+#: app/templates/layout.html:13 app/views/timeline.py:28
+msgid "Home"
+msgstr "Accueil"
+
+#: app/templates/layout.html:15 app/views/parent.py:22
+#, fuzzy
+msgid "Parents"
+msgstr "Famille"
+
+#: app/templates/layout.html:16 app/views/base.py:22
+msgid "Contact"
+msgstr "Contactez-nous"
+
+#: app/templates/layout.html:17 app/templates/timeline/create.html:13
+#: app/views/timeline.py:61
+#, fuzzy
+msgid "Add message"
+msgstr "Ajouter message"
+
+#: app/templates/layout.html:18
+msgid "Edit family form"
+msgstr "Modifier le formulaire familial"
+
+#: app/templates/layout.html:41
+msgid "Language"
+msgstr "Langage"
+
+#: app/templates/layout.html:42
+msgid "French"
+msgstr "Français"
+
+#: app/templates/layout.html:43
+msgid "English"
+msgstr "Anglais"
+
+#: app/templates/admin/child_family_form.html:5
+msgid "Existing fields"
+msgstr "Champs existants"
+
+#: app/templates/admin/child_family_form.html:12
+#: app/templates/child/editf.html:10
+msgid "Edit"
+msgstr "Modifier"
+
+#: app/templates/admin/child_family_form.html:14
+#, fuzzy
+msgid "Enable"
+msgstr "Nom"
+
+#: app/templates/admin/child_family_form.html:16
+msgid "Disable"
+msgstr "Désactiver"
+
+#: app/templates/admin/child_family_form.html:21
+#, fuzzy
+msgid "Add a new field"
+msgstr "Ajouter"
+
+#: app/templates/admin/child_family_form.html:26
+#, fuzzy
+msgid "Add"
+msgstr "Ajouter"
+
+#: app/templates/child/assoc.html:5 app/templates/child/assoc.html:15
+msgid "Associate"
+msgstr "Associer"
+
+#: app/templates/child/assoc.html:5
+msgid "to"
+msgstr "à"
+
+#: app/templates/child/assoc.html:7
+#, fuzzy
+msgid "Choose"
+msgstr "Accueil"
+
+#: app/templates/child/assoc.html:13
+msgid "Relation type"
+msgstr "Type de relation"
+
+#: app/templates/child/create.html:12 app/templates/parent/create.html:9
+#: app/templates/parent/list.html:20
+msgid "Create"
+msgstr "Créer"
+
+#: app/templates/child/detail.html:3
+msgid "General information"
+msgstr "Informations générales"
+
+#: app/templates/child/detail.html:9
+#, fuzzy
+msgid "Family"
+msgstr "Nom"
+
+#: app/templates/child/detail.html:12
+msgid "Remove association"
+msgstr "Retirer l'association"
+
+#: app/templates/child/detail.html:14
+msgid "Associate a new member"
+msgstr "Associer une nouvelle personne"
+
+#: app/templates/child/detail.html:17 app/templates/child/list.html:17
+#, fuzzy
+msgid "Family form"
+msgstr "Nom"
+
+#: app/templates/child/detail.html:22
+msgid "Disable the child"
+msgstr "Désactiver l'enfant"
+
+#: app/templates/child/list.html:16
+#, fuzzy
+msgid "Details"
+msgstr "Email"
+
+#: app/templates/child/list.html:23
+msgid "Add new"
+msgstr "Ajouter"
+
+#: app/templates/timeline/list.html:5
+msgid "Feed activity"
+msgstr "La journée de mon enfant"
+
+#: app/templates/parent/detail.html:12
+msgid "Delete"
+msgstr "Supprimer"
+
+#: app/templates/parent/list.html:15
+msgid "See"
+msgstr "Voir"
+
+#: app/views/admin.py:33 app/views/child.py:133
+#, fuzzy
+msgid "Edit child"
+msgstr "Ajouter enfant"
+
+#: app/views/admin.py:46
+msgid "Field added"
+msgstr "Champ ajouté"
+
+#: app/views/admin.py:58
+msgid "Field edited"
+msgstr "Champ modifié"
+
+#: app/views/admin.py:67
+msgid "Field disabled"
+msgstr "Champ désactivé"
+
+#: app/views/admin.py:76
+msgid "Field enabled"
+msgstr "Champ activé"
+
+#: app/views/child.py:50
+msgid "Child successfully added."
+msgstr "Enfant ajouté"
+
+#: app/views/child.py:53
+msgid "Add child"
+msgstr "Ajouter enfant"
+
+#: app/views/child.py:62
+#, python-format
+msgid "Child %(child)s"
+msgstr "Enfant %(child)s"
+
+#: app/views/child.py:72
+msgid "Child successfully disabled."
+msgstr "Enfant désactivé"
+
+#: app/views/child.py:130
+#, fuzzy
+msgid "Child successfully updated."
+msgstr "Enfant ajouté"
+
+#: app/views/child.py:157
+#, python-format
+msgid "Associate a parent to %(child)s"
+msgstr "Associer un parent à %(child)s"
+
+#: app/views/parent.py:37
+msgid "Parent successfully added"
+msgstr "Utilisateur ajouté"
+
+#: app/views/parent.py:40
+#, fuzzy
+msgid "Add parent"
+msgstr "Ajouter"
+
+#: app/views/parent.py:49
+#, python-format
+msgid "Parent %(parent)s"
+msgstr "Utilisateur %(parent)s"
+
+#: app/views/parent.py:59
+msgid "Parent successfully disabled."
+msgstr "Utilisateur désactivé"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "Arrival"
+#~ msgstr "Arrivée"
+
+#~ msgid "Departure"
+#~ msgstr "Départ"
+
+#~ msgid "Bottle"
+#~ msgstr "Biberon"
+
+#~ msgid "Food"
+#~ msgstr "Repas"
+
+#~ msgid "Activity"
+#~ msgstr "Activité"
+
+#~ msgid "Birth story"
+#~ msgstr "L'histoire de ma naissance"
+

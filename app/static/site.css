@@ -1,0 +1,226 @@
+/* Layout  */
+.navbar {
+  background-color: lightslategray;
+  font-size: 1em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  padding: 8px 5px 8px 5px;
+  margin-bottom: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-brand {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.navbar-item {
+  font-variant: small-caps;
+  margin-left: 30px;
+}
+
+.body-content {
+  /* width: 100%;
+  padding: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+footer {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid grey;
+}
+
+/* Messages */
+.success {
+  background-color: lightgreen;
+  color: white;
+  font-weight: 400;
+}
+
+.warning {
+  background-color: yellow;
+  font-weight: 400;
+}
+
+.error {
+  background-color: red;
+  color: white;
+  font-weight: 400;
+}
+
+.message {
+  background-color: aliceblue;
+  font-weight: 400;
+}
+
+/* Form */
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  margin: 10px;
+  font-size: 12px;
+}
+
+a.button {
+  background-color: darkblue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  float: right;
+  margin: 10px;
+  font-size: 12px;
+}
+
+.form-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* Timeline */
+.timeline {
+  width: 100%;
+  justify-content: center;
+}
+
+.timeline h1 {
+  margin-left: 100px;
+  font-size: medium;
+  color: darkblue;
+  font-weight: 600;
+}
+
+.timeline-message {
+  width: 90%;
+  max-width: 30vw;
+  height: auto;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  margin-top: 40px;
+}
+
+.timeline-message .info {
+  width: 90%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px dashed lightgray;
+}
+
+.timeline-message .info .date {
+  height: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+}
+
+.timeline-message .info .type {
+  display: flex;
+  align-items: center;
+}
+
+.timeline-message .info .type .text {
+  width: auto;
+  font-weight: bold;
+  color: #000;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.timeline-message .info .type .icon {
+  /* height: 40px;
+  width: 40px;
+  padding: 0; */
+  background: none;
+  position:relative;
+  top: calc(50% - 10px); /* 50% - 3/4 of icon height */
+}
+
+.timeline-message .image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.timeline-message .content {
+  width: 100%;
+  padding: 20px;
+}
+
+.timeline-message .content .text {
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.timeline-message .content .text span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.timeline-message .content .children {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  font-style: italic;
+  text-align: right;
+  padding-right: 10%;
+}

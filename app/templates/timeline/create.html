@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+<form method=post>
+  <dl>
+    {{ render_field(form.added_date) }}
+    {{ render_field(form.message_type) }}
+    {{ render_field(form.message) }}
+    {{ render_field(form.duration_minutes) }}
+    {{ render_field(form.quantity) }}
+    {{ render_field(form.children_ids) }}
+  </dl>
+  <input type="submit" value="{{ _('Add message') }}" />
+</form>
+{% endblock %}
